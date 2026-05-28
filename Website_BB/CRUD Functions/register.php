@@ -5,6 +5,7 @@
 </head>
 
 <?php
+session_start();
 include("css.php");
 
 if (isset($_POST["register"])) {
@@ -20,7 +21,7 @@ if (isset($_POST["register"])) {
     $confirm_password = trim($_POST['confirm_password']);
 
     // Validation
-    if (empty($fname) || empty($lname) || empty($username) || empty($password) || empty($confirm_password)) 
+    if (empty($fname) || empty($username) || empty($password) || empty($confirm_password)) 
         {
             $error = "Please fill in all required fields.";
         } 
